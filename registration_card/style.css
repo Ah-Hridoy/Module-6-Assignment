@@ -1,0 +1,89 @@
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+  }
+
+  .container{
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+    padding: 20px 30px;
+    background-color: rgb(250, 246, 238);
+    font-weight: bold;
+    width: 100%;
+    font-size: large;
+
+}
+
+h1{
+    text-align: center;
+}  
+
+name, .name #fname{
+    padding: 5px;
+}
+
+.name #uname{
+    margin-left: 90px;
+}
+
+.email{
+    margin-left: 40px;
+    padding: 5px;
+
+} 
+
+.email #number{
+    margin-left: 49px;
+    padding: 5px;
+
+}
+
+.password{
+    margin-left: 16px;
+
+}
+
+.password #con_password{
+    margin-left: 34px;
+}
+
+.radio{
+    margin-top: 10px;
+}
+ 
+.btn #submit{
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    padding: 7px;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+.btn #submit:hover{
+    background: linear-gradient(-135deg, #71b7e6, #9b59b6);    
+}
+
+
+.btn #cancel{
+    background: red;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    padding: 7px;
+    cursor: pointer;
+    margin-top: 30px;
+
+}
+
+.btn #cancel:hover{
+    background-color: transparent;
+    color: red;
+}
