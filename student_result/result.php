@@ -1,41 +1,77 @@
 <?php
 
-$marks = 20;
-$marks = 10;
+function result_make(float $math, float $physics, float $chemistry, float $english, float $bangla){
+    $total_marks = $math + $physics + $chemistry + $english + $bangla;
+    $average_marks = $total_marks/5;
 
-function marks(){
-    global $marks, $marks;
-    echo $marks + $marks/2;
-    echo "\n";
-}
-marks();
+    switch(true){
+        case(!($math >= 0 && $math <= 100)||
+            !($physics >= 0 && $physics <= 100)||
+            !($chemistry >= 0 && $chemistry <= 100)||
+            !($english >= 0 && $english <= 100)||
+            !($bangla >= 0 && $bangla <= 100)):
+            {
+                return "Mark range is Invalid \n";
+                break;
+            }
 
+        // Fail Checking for individual subject
+        case(($math < 33)||
+            ($physics < 33)||
+            ($chemistry < 33)||
+            ($english < 33)||
+            ($bangla < 33)
+            ):
+            {
+                return "Grade is Fail \n";
+                break;
+            }
 
-$marks = 60;
+        case ($average_marks >= 80 && 100 >= $average_marks):
+            echo "Total Marks = " .$total_marks . "\n";
+            echo "Average Marks = " .$average_marks . "\n";
+            echo "Grade A+";
+            break;
+        
+        case ($average_marks >= 70 && 80 >= $average_marks):
+            echo "Total Marks = " .$total_marks . "\n";
+            echo "Average Marks = " .$average_marks . "\n";
+            echo "Grade A";
+            break;
 
-switch(true){
-    case ($marks <= 100 && $marks >= 80):
-    echo "Grade: A+";
-    break;
+        case ($average_marks >= 60 && 70 >= $average_marks):
+            echo "Total Marks = " .$total_marks . "\n";
+            echo "Average Marks = " .$average_marks . "\n";
+            echo "Grade A-";
+            break;
+            
+        case ($average_marks >= 50 && 60 >= $average_marks):
+            echo "Total Marks = " .$total_marks . "\n";
+            echo "Average Marks = " .$average_marks . "\n";
+            echo "Grade B";
+            break;
+        
+        case ($average_marks >= 40 && 50 >= $average_marks):
+            echo "Total Marks = " .$total_marks . "\n";
+            echo "Average Marks = " .$average_marks . "\n";
+            echo "Grade C";
+            break;
+        
+        case ($average_marks >= 33 && 40 >= $average_marks):
+            echo "Total Marks = " .$total_marks . "\n";
+            echo "Average Marks = " .$average_marks . "\n";
+            echo "Grade D";
+            break;
+        
+        case ($average_marks >= 0 && 33 >= $average_marks):
+            echo "Total Marks = " .$total_marks . "\n";
+            echo "Average Marks = " .$average_marks . "\n";
+            echo "Grade Fail";
+            break;
     
-    case ($marks <= 80 && $marks >= 70):
-    echo "Grade: A";
-    break;
-
-    case ($marks <= 70 && $marks >= 60):
-    echo "Grade: A-";
-    break;
-
-    case ($marks <= 60 && $marks >= 50):
-    echo "Grade: B";
-    break;
-
-    case ($marks <= 50 && $marks >= 40):
-    echo "Grade: C";
-    break;
-
-    case ($marks <= 40 && $marks >= 33):
-    echo "Grade: D";
-    break;
+    }
 
 }
+
+$result = result_make(20, 35, 78, 72, 77);
+echo $result;
